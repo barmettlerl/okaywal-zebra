@@ -68,9 +68,9 @@ where
         Self {
             file_manager,
             directory: PathId::from(path.as_ref()),
-            preallocate_bytes: megabytes(1),
-            checkpoint_after_bytes: kilobytes(768),
-            buffer_bytes: kilobytes(16),
+            preallocate_bytes: megabytes(32),
+            checkpoint_after_bytes: kilobytes(768 * 32),
+            buffer_bytes: kilobytes(16 * 32),
             version_info: Arc::default(),
         }
     }
